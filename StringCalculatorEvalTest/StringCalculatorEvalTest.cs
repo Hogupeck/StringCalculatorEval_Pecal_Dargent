@@ -11,6 +11,7 @@ namespace StringCalculatorEvalTest
             yield return [0, 1];
             yield return [2, 0];
             yield return [1, 2];
+            yield return [1, 2, 1];
         }
 
         [Theory]
