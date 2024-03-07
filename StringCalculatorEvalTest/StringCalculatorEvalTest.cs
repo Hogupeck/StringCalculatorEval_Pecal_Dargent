@@ -14,5 +14,17 @@ namespace StringCalculatorEvalTest
 
             Assert.Equal(contrôle, result);
         }
+        [Fact]
+        public void APlusB2()
+        {
+            const string testée = "2, 2";
+
+            var result =
+                StringCalculatorEval.StringCalculatorEval.Parse();
+
+            var contrôle = 2 + 2;
+
+            Assert.Equal(contrôle, result);
+        }
     }
 }
