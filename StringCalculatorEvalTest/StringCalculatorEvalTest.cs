@@ -5,10 +5,10 @@ namespace StringCalculatorEvalTest
         [Fact]
         public void APlusB1()
         {
-            const string testée = "1, 2";
+            const string input = "1, 2";
 
             var result =
-                StringCalculatorEval.StringCalculatorEval.Parse();
+                StringCalculatorEval.StringCalculatorEval.Parse(input);
 
             var contrôle = 1 + 2;
 
@@ -17,10 +17,10 @@ namespace StringCalculatorEvalTest
         [Fact]
         public void APlusB2()
         {
-            const string testée = "2, 2";
+            const string input = "2, 2";
 
             var result =
-                StringCalculatorEval.StringCalculatorEval.Parse();
+                StringCalculatorEval.StringCalculatorEval.Parse(input);
 
             var contrôle = 2 + 2;
 

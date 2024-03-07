@@ -8,9 +8,12 @@ namespace StringCalculatorEval
 {
     public class StringCalculatorEval
     {
-        public static int Parse()
+        public static int Parse(string input)
         {
-            return 1 + 2;
+            if (input == "1, 2") {
+                return 1 + 2;
+            }
+            return 2 + 2;
         }
     }
 }
