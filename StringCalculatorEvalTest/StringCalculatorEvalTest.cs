@@ -22,9 +22,15 @@ namespace StringCalculatorEvalTest
             var result =
                 StringCalculatorEval.StringCalculatorEval.Parse(input);
 
-            var contrôle = 2 + 2;
+        [Theory]
+        [MemberData(nameof(CasAPlusB))]
+        public void APlusB(params int[] parts)
+        {
+            var input = string.Join(',', parts);
+            var result = StringCalculatorEval.StringCalculatorEval.Parse(input);
+            var contrôle = parts.First() + parts.Last();
 
-            Assert.Equal(contrôle, result);
+            Assert.Equal(parts.Sum(), result);
         }
     }
 }
