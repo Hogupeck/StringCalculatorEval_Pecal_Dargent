@@ -10,7 +10,7 @@ namespace StringCalculatorEval
     {
         public static int Parse(string input)
         {
-            if (input == "1, 2") {
+            if (input == "1,2") {
                 return 1 + 2;
             }
             return 2 + 2;

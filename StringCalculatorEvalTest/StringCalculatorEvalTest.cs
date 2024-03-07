@@ -1,26 +1,17 @@
+using System.IO;
+
 namespace StringCalculatorEvalTest
 {
     public class StringCalculatorEvalTest
     {
-        [Fact]
-        public void APlusB1()
+        public static IEnumerable<object[]> CasAPlusB()
         {
-            const string input = "1, 2";
-
-            var result =
-                StringCalculatorEval.StringCalculatorEval.Parse(input);
-
-            var contrôle = 1 + 2;
-
-            Assert.Equal(contrôle, result);
+            yield return [0, 0];
+            yield return [1, 0];
+            yield return [0, 1];
+            yield return [2, 0];
+            yield return [1, 2];
         }
-        [Fact]
-        public void APlusB2()
-        {
-            const string input = "2, 2";
-
-            var result =
-                StringCalculatorEval.StringCalculatorEval.Parse(input);
 
         [Theory]
         [MemberData(nameof(CasAPlusB))]
@@ -28,7 +19,6 @@ namespace StringCalculatorEvalTest
         {
             var input = string.Join(',', parts);
             var result = StringCalculatorEval.StringCalculatorEval.Parse(input);
-            var contrôle = parts.First() + parts.Last();
 
             Assert.Equal(parts.Sum(), result);
         }
