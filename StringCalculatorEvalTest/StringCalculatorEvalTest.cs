@@ -24,5 +24,19 @@ namespace StringCalculatorEvalTest
             Assert.Equal(parts.Sum(), result);
         }
 
+        [Fact]
+        public void Espaces()
+        {
+            const string testée = "1 0, 1 0  ";
+
+            var result =
+                StringCalculatorEval.StringCalculatorEval.Parse(testée);
+
+            var contrôle = StringCalculatorEval.StringCalculatorEval.Parse(
+                testée.Replace(" ", "")
+            );
+
+            Assert.Equal(contrôle, result);
+        }
     }
 }
