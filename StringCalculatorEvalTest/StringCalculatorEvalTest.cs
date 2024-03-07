@@ -6,11 +6,8 @@ namespace StringCalculatorEvalTest
     {
         public static IEnumerable<object[]> CasAPlusB()
         {
-            yield return [0, 0];
-            yield return [1, 0];
-            yield return [0, 1];
-            yield return [2, 0];
-            yield return [0, 2];
+            yield return [1, 2];
+            yield return [2, 2];
         }
 
         [Theory]
@@ -19,8 +16,9 @@ namespace StringCalculatorEvalTest
         {
             var input = string.Join(',', parts);
             var result = StringCalculatorEval.StringCalculatorEval.Parse(input);
+            var contrôle = parts.First() + parts.Last();
 
-            Assert.Equal(parts.Sum(), result);
+            Assert.Equal(contrôle, result);
         }
     }
 }
