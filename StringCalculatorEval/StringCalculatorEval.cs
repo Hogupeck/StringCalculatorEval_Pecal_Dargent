@@ -14,6 +14,7 @@ namespace StringCalculatorEval
             var parts = input.Split(',');
 
             var numbers = parts
+                .Select(str => str.Replace(" ", ""))
                 .Select(int.Parse)
                 .Sum();
 
