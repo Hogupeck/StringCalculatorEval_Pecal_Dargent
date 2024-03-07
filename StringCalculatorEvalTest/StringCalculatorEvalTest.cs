@@ -38,5 +38,16 @@ namespace StringCalculatorEvalTest
 
             Assert.Equal(contrôle, result);
         }
+        [Fact]
+        public void NegatifsInterdits()
+        {
+            const string testée = "-1";
+
+            void Act() => StringCalculatorEval.StringCalculatorEval.Parse(testée);
+
+            var exception = Assert.Throws<NombreNegatifException>(Act);
+            Assert.Equal(0, exception.Position);
+            Assert.Equal(-1, exception.NombreFautif);
+        }
     }
 }
