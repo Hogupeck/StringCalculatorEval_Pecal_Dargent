@@ -23,5 +23,6 @@ namespace StringCalculatorEvalTest
 
             Assert.Equal(parts.Sum(), result);
         }
+
     }
 }
